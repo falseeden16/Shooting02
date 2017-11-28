@@ -1,32 +1,14 @@
 #include "Game.hpp"
 
 
-<<<<<<< HEAD
 // TODO: 砲台の位置を画面左に、ターゲットの位置を画面右に移動させる。(A)(実装　HW16A006　池田 仁基)
 // TODO: 雲の位置を左から右に動かす。見えなくなったら左端に戻す。(B)(実装:HW16A001 青葉拓希)
 // TODO: 砲台を青い壁に沿って上下に動かす。(C)(実装　HW16A006　池田 仁基)
 // TODO: 弾のスピードを速くし、弾が画面右端を通り越したら再度発射可能にする。(D)(HW16A093 島村 幸佑)
 // TODO: スコアのサイズを大きくする。(E)(実装:HW16A168 船島 大喜)
-// TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)
-=======
-// TODO: 砲台の位置を画面左に、ターゲットの位置を画面右に移動させる。(A)
-// TODO: 雲の位置を左から右に動かす。見えなくなったら左端に戻す。(B)
-// TODO: 砲台を青い壁に沿って上下に動かす。(C)
-// TODO: 弾のスピードを速くし、弾が画面右端を通り越したら再度発射可能にする。(D)
-// TODO: スコアのサイズを大きくする。(E)
-<<<<<<< HEAD
 // TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)(実装:HW16A168 船島 大喜)
->>>>>>> 753b6efbab599aac5566115b10ebcb19ce45588e
-// TODO: PlayBGM()関数を使って、BGMを再生する。(G)
-<<<<<<< HEAD
-=======
-// TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)
 // TODO: PlayBGM()関数を使って、BGMを再生する。(G)(HW16A093 島村 幸佑)
->>>>>>> a975f52fa770f0892041ba799510edc1bbde62ce
-// TODO: PlaySE()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H)
-=======
 // TODO: PlaySE()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H) (実装：HW16A001 青葉拓希)
->>>>>>> 5a4c2a3452ef4d691778abfc6258e54e40ae3950
 
 
 Vector2 cloudPos;       //!< 雲の位置
@@ -67,12 +49,8 @@ void Update()
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
-<<<<<<< HEAD
             score += 100;         // スコアの加算
-=======
             PlaySound("se_maoudamashii_explosion06.mp3");
-            score += 1;         // スコアの加算
->>>>>>> 5a4c2a3452ef4d691778abfc6258e54e40ae3950
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
         }
     }
@@ -102,14 +80,8 @@ void Update()
     FillRect(targetRect, Color::red);
 
     // スコアの描画
-<<<<<<< HEAD
     SetFont("nicoca_v1.ttf", 80.0f);
-    DrawText(FormatString("%02d", score), Vector2(-309, 169), Color::black);
-    DrawText(FormatString("%02d", score), Vector2(-310, 170), Color::white);
-=======
-    SetFont("nicoca_v1.ttf", 20.0f);
-    DrawText(FormatString("%05d", score), Vector2(-319, 199), Color::black);
-    DrawText(FormatString("%05d", score), Vector2(-320, 200), Color::white);
->>>>>>> 753b6efbab599aac5566115b10ebcb19ce45588e
+    DrawText(FormatString("%05d", score), Vector2(-309, 169), Color::black);
+    DrawText(FormatString("%05d", score), Vector2(-310, 170), Color::white);
 }
 
